@@ -1,8 +1,4 @@
-interface People {
-  name: string;
-  craft: string;
-}
-
+import { People } from "./People";
 
 export interface SpacePeople {
   people: People[];
