@@ -1,0 +1,9 @@
+.person_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px;
+  border: 2px solid;
+  border-radius: 12px;
+}

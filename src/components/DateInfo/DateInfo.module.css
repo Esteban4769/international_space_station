@@ -1,0 +1,12 @@
+.container {
+  padding: 8px 16px;
+
+  background-color: #d6dbdf;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: black;
+}
+
+.time_wrapper {
+  font-weight: bold;
+}
