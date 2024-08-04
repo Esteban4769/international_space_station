@@ -1,7 +1,5 @@
 # The ISS tracking APP
 
-[DEMO](https://Esteban4769.github.io/international_space_station/)
-
 ## Description
 
 The ISS tracking APP is a web application that will display the current in real time
