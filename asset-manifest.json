@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/international_space_station/static/css/main.4e325a44.css",
-    "main.js": "/international_space_station/static/js/main.fe254cbc.js",
-    "index.html": "/international_space_station/index.html",
-    "main.4e325a44.css.map": "/international_space_station/static/css/main.4e325a44.css.map",
-    "main.fe254cbc.js.map": "/international_space_station/static/js/main.fe254cbc.js.map"
+    "main.css": "./static/css/main.4e325a44.css",
+    "main.js": "./static/js/main.fe254cbc.js",
+    "index.html": "./index.html",
+    "main.4e325a44.css.map": "./static/css/main.4e325a44.css.map",
+    "main.fe254cbc.js.map": "./static/js/main.fe254cbc.js.map"
   },
   "entrypoints": [
     "static/css/main.4e325a44.css",
