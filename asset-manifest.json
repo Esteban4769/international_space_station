@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/international_space_station/static/css/main.4e325a44.css",
+    "main.js": "/international_space_station/static/js/main.fe254cbc.js",
+    "index.html": "/international_space_station/index.html",
+    "main.4e325a44.css.map": "/international_space_station/static/css/main.4e325a44.css.map",
+    "main.fe254cbc.js.map": "/international_space_station/static/js/main.fe254cbc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e325a44.css",
+    "static/js/main.fe254cbc.js"
+  ]
+}
