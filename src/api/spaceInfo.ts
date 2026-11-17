@@ -2,12 +2,10 @@ import { ISSPosition } from "../types/ISSPosition";
 import { SpacePeople } from "../types/SpacePeople";
 import { client } from "../utils/fetchClient";
 
-const URL = 'http://api.open-notify.org';
-
 export const getPeople = () => {
-  return client.get<SpacePeople>(URL + '/astros.json');
+  return client.get<SpacePeople>('https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json');
 };
 
 export const getISSPosition = () => {
-  return client.get<ISSPosition>(URL + '/iss-now.json');
+  return client.get<ISSPosition>('https://api.wheretheiss.at/v1/satellites/25544');
 };

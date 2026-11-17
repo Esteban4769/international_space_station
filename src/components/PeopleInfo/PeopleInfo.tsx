@@ -3,13 +3,13 @@ import { Person } from "../Person";
 import styles from './PeopleInfo.module.css';
 
 export const PeopleInfo = () => {
-  const { people } = useAppSelector(state => state);
+  const people = useAppSelector(state => state.people);
 
   return (
     <div className={styles.container}>
       <div className={styles.people_wrapper}>
-        {people.data && (people.data.map(({ name }) => (
-          <Person name={name} />
+        {people.data && (people.data.map(({ id, name }) => (
+          <Person key={id} name={name} />
         )))}
       </div>
       

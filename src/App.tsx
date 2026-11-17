@@ -11,35 +11,41 @@ import ReactLoading from "react-loading";
 
 function App() {
   const dispatch = useAppDispatch();
-  const { position, people } = useAppSelector((state) => state);
+  const position = useAppSelector((state) => state.position);
+  const people = useAppSelector((state) => state.people);
 
-  const latitude = position.data?.iss_position?.latitude ?? "0";
-  const longitude = position.data?.iss_position?.longitude ?? "0"
-
-  const loadInfo = async () => {
-     await dispatch(peopleActions.fetchData());
-     await dispatch(positionActions.fetchData());
-  };
+  const latitude = position.data?.latitude ?? 0;
+  const longitude = position.data?.longitude ?? 0;
 
   useEffect(() => {
-    loadInfo();
+    let timeout: ReturnType<typeof setTimeout>;
 
-    const fetchInterwal = setInterval(loadInfo, 5000);
+    const fetchPosition = async () => {
+      await dispatch(positionActions.fetchData());
 
-    return () => {
-      clearInterval(fetchInterwal);
+      timeout = setTimeout(fetchPosition, 5000);
     };
-  }, []);
+
+    fetchPosition();
+    dispatch(peopleActions.fetchData());
+
+    return () => clearTimeout(timeout);
+  }, [dispatch]);
 
   return (
     <div className={styles.container}>
-      {(position.loading || people.loading) 
-        && (!position.data && !people.data) 
-        &&
-        (<div className={styles.loader_wrapper}>
-          <ReactLoading type={'spin'} color={'#2c3e50'} height={240} width={240} />
-        </div>)
-      }
+      {(position.loading || people.loading) &&
+        !position.data &&
+        !people.data && (
+          <div className={styles.loader_wrapper}>
+            <ReactLoading
+              type={"spin"}
+              color={"#2c3e50"}
+              height={240}
+              width={240}
+            />
+          </div>
+        )}
 
       {position.data && people.data && (
         <>

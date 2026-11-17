@@ -1,16 +1,15 @@
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import styles from "./PositionMap.module.css";
-import { normalizeData } from "../../utils/normalizeData";
 
 const API_KEY = "AIzaSyDj-Sas_opZb1LXxVULHwmROjFAev6PYcc";
 
 interface Props {
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
 }
 
 export const PositionMap: React.FC<Props> = ({ latitude, longitude }) => {
-  const {lat, lng} = normalizeData({ latitude, longitude });
+  const [lat, lng]  = [latitude, longitude].map(n => Number(n.toFixed(2)));
 
   return (
     <div className={styles.container}>

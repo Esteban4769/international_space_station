@@ -32,8 +32,7 @@ const peopleSlice = createSlice({
     });
 
     builder.addCase(fetchData.fulfilled, (state, action) => {
-      state.data = action.payload
-        .people.filter(({ craft }) => craft === 'ISS');
+      state.data = action.payload.people.filter(person => person.iss);
       state.loading = false;
     });
 
